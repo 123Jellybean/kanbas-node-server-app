@@ -3,8 +3,6 @@ export const findAllUsers = () => model.find();
 // import db from "../Database/index.js";
 // let { users } = db;
 
-export const createUser = (user) => {}; // implemented later
-
 export const findUserByUsername = (username) =>
   model.findOne({ username: username });
 export const findUserByCredentials = (username, password) =>
@@ -22,3 +20,8 @@ export const deleteUser = (userId) => model.deleteOne({ _id: userId });
 
 export const updateUser = (userId, user) =>
   model.updateOne({ _id: userId }, { $set: user });
+
+export const createUser = (user) => {
+  delete user._id;
+  return model.create(user);
+};
