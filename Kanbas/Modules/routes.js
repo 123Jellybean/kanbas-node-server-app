@@ -11,6 +11,7 @@ export default function ModuleRoutes(app) {
     const { moduleId } = req.params;
     const moduleUpdates = req.body;
     const status = await modulesDao.updateModule(moduleId, moduleUpdates);
-    res.sendStatus(204);
+    res.send(status);
   });
+
 }
