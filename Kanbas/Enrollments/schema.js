@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+
 const enrollmentSchema = new mongoose.Schema(
   {
     course: { type: mongoose.Schema.Types.ObjectId, ref: "CourseModel" },
@@ -14,4 +15,5 @@ const enrollmentSchema = new mongoose.Schema(
   },
   { collection: "enrollments" }
 );
+
 export default enrollmentSchema;
